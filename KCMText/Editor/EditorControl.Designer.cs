@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.txtMain = new System.Windows.Forms.TextBox();
             this.contextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.undoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.cutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +43,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.wordWrapMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.undoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontSelector = new System.Windows.Forms.FontDialog();
             this.contextStrip.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,6 @@
             this.txtMain.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMain.Size = new System.Drawing.Size(284, 150);
             this.txtMain.TabIndex = 0;
-            this.txtMain.WordWrap = false;
             this.txtMain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMain_KeyUp);
             // 
             // contextStrip
@@ -76,8 +75,27 @@
             this.wordWrapMenuItem,
             this.aboutMenuItem});
             this.contextStrip.Name = "contextStrip";
-            this.contextStrip.Size = new System.Drawing.Size(216, 242);
+            this.contextStrip.Size = new System.Drawing.Size(216, 220);
             this.contextStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextStrip_Opening);
+            // 
+            // undoMenuItem
+            // 
+            this.undoMenuItem.Enabled = false;
+            this.undoMenuItem.Name = "undoMenuItem";
+            this.undoMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.undoMenuItem.Text = "&Undo... (not implemented)";
+            // 
+            // redoMenuItem
+            // 
+            this.redoMenuItem.Enabled = false;
+            this.redoMenuItem.Name = "redoMenuItem";
+            this.redoMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.redoMenuItem.Text = "&Redo... (not implemented)";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(212, 6);
             // 
             // cutMenuItem
             // 
@@ -85,6 +103,7 @@
             this.cutMenuItem.Name = "cutMenuItem";
             this.cutMenuItem.Size = new System.Drawing.Size(215, 22);
             this.cutMenuItem.Text = "C&ut";
+            this.cutMenuItem.Click += new System.EventHandler(this.cutMenuItem_Click);
             // 
             // copyMenuItem
             // 
@@ -92,6 +111,7 @@
             this.copyMenuItem.Name = "copyMenuItem";
             this.copyMenuItem.Size = new System.Drawing.Size(215, 22);
             this.copyMenuItem.Text = "&Copy";
+            this.copyMenuItem.Click += new System.EventHandler(this.copyMenuItem_Click);
             // 
             // pasteMenuItem
             // 
@@ -99,6 +119,7 @@
             this.pasteMenuItem.Name = "pasteMenuItem";
             this.pasteMenuItem.Size = new System.Drawing.Size(215, 22);
             this.pasteMenuItem.Text = "&Paste";
+            this.pasteMenuItem.Click += new System.EventHandler(this.pasteMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -130,6 +151,7 @@
             this.wordWrapMenuItem.Name = "wordWrapMenuItem";
             this.wordWrapMenuItem.Size = new System.Drawing.Size(215, 22);
             this.wordWrapMenuItem.Text = "&Word Wrap";
+            this.wordWrapMenuItem.Click += new System.EventHandler(this.wordWrapMenuItem_Click);
             // 
             // aboutMenuItem
             // 
@@ -137,25 +159,6 @@
             this.aboutMenuItem.Size = new System.Drawing.Size(215, 22);
             this.aboutMenuItem.Text = "&About...";
             this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(212, 6);
-            // 
-            // undoMenuItem
-            // 
-            this.undoMenuItem.Enabled = false;
-            this.undoMenuItem.Name = "undoMenuItem";
-            this.undoMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.undoMenuItem.Text = "&Undo... (not implemented)";
-            // 
-            // redoMenuItem
-            // 
-            this.redoMenuItem.Enabled = false;
-            this.redoMenuItem.Name = "redoMenuItem";
-            this.redoMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.redoMenuItem.Text = "&Redo... (not implemented)";
             // 
             // fontSelector
             // 

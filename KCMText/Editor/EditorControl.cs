@@ -60,7 +60,7 @@ namespace KCMText.Editor
         public bool WordWrap
         {
             get { return txtMain.WordWrap; }
-            set { txtMain.WordWrap = value; }
+            set { txtMain.WordWrap = value; RaiseCursorPositionModified(this, new EventArgs()); }
         }
         /// <summary>
         /// Perform a cut action on the currently selected text.
@@ -209,6 +209,30 @@ namespace KCMText.Editor
         private void selectAllMenuItem_Click(object sender, EventArgs e)
         {
             SelectAll();
+        }
+
+        private void cutMenuItem_Click(object sender, EventArgs e)
+        {
+            Cut();
+        }
+
+        private void copyMenuItem_Click(object sender, EventArgs e)
+        {
+            Copy();
+        }
+
+        private void pasteMenuItem_Click(object sender, EventArgs e)
+        {
+            Paste();
+        }
+
+        private void wordWrapMenuItem_Click(object sender, EventArgs e)
+        {
+            WordWrap = wordWrapMenuItem.Checked;
+            if (!WordWrap)
+                txtMain.ScrollBars = ScrollBars.Both;
+            else
+                txtMain.ScrollBars = ScrollBars.Vertical;
         }
     }
 
